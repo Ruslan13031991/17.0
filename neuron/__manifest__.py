@@ -4,36 +4,47 @@
 
     'summary': "Interactive Phone Script Assistant",
 
-    # 'description': """
-    #     The script assistant is a universal assistant in which you can program all the options for developing a conversation for your managers. A tool that leads the manager automatically to a deal with a client. It also determines at what stage you lose customers.
-    # """,
+    'description': """
+        The script assistant is a universal tool in which you can program all the options for developing a conversation for your managers.
+        A tool that leads the manager automatically to a deal with a client.
+        It also determines at what stage you lose customers.
+    """,
 
     'author': "Neuron",
     'website': "https://neuron-systems.com",
 
-
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/17.0/odoo/addons/base/data/ir_module_category_data.xml
-    # for the full list
     'category': 'Sales/CRM',
-    'version': '0.1',
+    'version': '17.0.1.0.0',
 
-    # any module necessary for this one to work correctly
-    'depends': ['base','crm'],
+    'license': 'LGPL-3',
 
-    # always loaded
+    'depends': [
+        'base',
+        'crm',
+    ],
+
     'data': [
-        # 'security/ir.model.access.csv',
         'views/crm_lead_views.xml',
         'views/views.xml',
         'views/templates.xml',
+        # 'security/ir.model.access.csv',  # Uncomment when you define your access rights
     ],
-    # only loaded in demonstration mode
+
     'demo': [
         'demo/demo.xml',
     ],
-    'images': [
-        'static/description/icon.png',
-    ],
-    'license': 'LGPL-3',
+
+    'assets': {
+        'web.assets_backend': [
+            # Example: 'neuron/static/src/js/script.js',
+        ],
+        'web.assets_qweb': [
+            # Example: 'neuron/static/src/xml/template.xml',
+        ],
+    },
+
+    'images': ['static/description/icon.png'],
+
+    'application': True,
+    'installable': True,
 }
